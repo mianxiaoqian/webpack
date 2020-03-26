@@ -2,11 +2,12 @@
  * @Author: qianqian.zhao
  * @Date: 2020-03-22 18:18:22
  * @LastEditors: qianqian.zhao
- * @LastEditTime: 2020-03-25 20:13:38
+ * @LastEditTime: 2020-03-26 20:13:44
  * @Description: webpack配置文件
  */
 
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -54,12 +55,28 @@ module.exports = {
       //   test: /\.vue$/,
       //   use: ['vue-loader']
       // }
-      {
-        test: /\.js$/,
-        enforce: 'pre', // 表示在所有的loader之前执行
-        use: 'eslint-loader',
-        exclude: /node_modules/
-      }
+      // {
+      //   test: /\.js$/,
+      //   enforce: 'pre', // 表示在所有的loader之前执行
+      //   // use: 'eslint-loader',
+      //   exclude: /node_modules/,
+      //   use: {
+      //     loader: 'babel-loader',
+      //     options: {
+      //       cacheDirectory: true, // 启用缓存机制，重复打包时未改变的模块不用二次编译
+      //       presetd: [
+      //         ['env', {modules: false}]
+      //       ]
+      //     }
+      //   }
+      // }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin(
+      {
+        template: './index.html'
+      }
+    )
+  ]
 }
