@@ -2,15 +2,16 @@
  * @Author: qianqian.zhao
  * @Date: 2020-03-25 18:50:33
  * @LastEditors: qianqian.zhao
- * @LastEditTime: 2020-04-03 16:39:29
+ * @LastEditTime: 2020-04-04 16:36:29
  * @Description: 单页面首页组件
  -->
 
 <template>
   <div class="miao">
-    {{msg}}
     这是项目的根目录文件app
-    <home></home>
+    <!-- <home></home> -->
+    <!-- 路由匹配的组件渲染到这里 -->
+    <router-view></router-view>
   </div>
 </template>
 
