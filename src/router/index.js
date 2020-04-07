@@ -9,6 +9,9 @@
 import VueRouter from 'vue-router';
 import Home from '@/views/home.vue';
 import SelectMeal from '@/views/select-meal.vue';
+import MenuList from '@/views/menu-list.vue';
+import AddMenu from '@/views/add-menu.vue'
+import MenuDetail from '@/views/menu-detail.vue'
 
 let routes = [
   {
@@ -18,6 +21,21 @@ let routes = [
   {
     path: '/selectMeal',
     component: SelectMeal
+  },
+  {
+    path: '/menuList',
+    component: MenuList,
+    meta: {
+      keepAlive: true
+    }
+  },
+  {
+    path: '/AddMenu',
+    component: AddMenu
+  },
+  {
+    path: '/menuDetail',
+    component: MenuDetail
   }
 ];
 routes.push(

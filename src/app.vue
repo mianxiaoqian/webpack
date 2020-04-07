@@ -10,7 +10,8 @@
   <div class="miao">
     <!-- 这是项目的根目录文件app -->
     <!-- 路由匹配的组件渲染到这里 -->
-    <router-view></router-view>
+    <keep-alive v-if="$route.meta.keepAlive"><router-view></router-view></keep-alive>
+    <router-view v-if="!$route.meta.keepAlive"></router-view>
   </div>
 </template>
 
