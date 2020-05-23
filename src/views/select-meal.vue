@@ -7,6 +7,7 @@
  -->
 <template>
   <div class="select-meal">
+    <input type="text" name="" oninput="value=value.replace(/[^\d]/g,'')">
     喵呜，菜单，啦啦啦
     <br>
     <el-checkbox-group v-model="todayMenu">
@@ -62,10 +63,10 @@ export default {
 
   data () {
     return {
-      menuList: ['米线', '酸辣粉', '麻辣烫', '陕西老碗', '淮南牛肉面', '寿司', '脱骨鸡',
-        '小笼包', '德克士', '麦当劳', '食其家', '粥饼世家', '冷面', '花甲', '牛肉粉', '黄焖鸡', '鸡丝凉面'],
-      yuxi: ['老包子', '小笼包', '德克士', '麦当劳', '寿司'],
-      laodu: ['凉皮', '衢饭儿'],
+      menuList: ['米线', '麻辣烫', '陕西老碗', '淮南牛肉面', '寿司', '脱骨鸡', '重庆小面',
+        '小笼包', '德克士', '麦当劳', '食其家', '粥饼世家', '冷面', '花甲', '牛肉粉', '黄焖鸡', '鸡丝凉面', '挑面官', '米粉', '小食札记'],
+      yuxi: ['老包子', '小笼包', '德克士', '麦当劳', '寿司', '脱骨鸡'],
+      laodu: ['凉皮', '衢饭儿', '陕西老碗', '重庆小面'],
       biyun: [],
       copyMenuList: [
         {
@@ -194,5 +195,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+input:hover {
+  outline-width: 0;
+  // display: none;
+}
 </style>

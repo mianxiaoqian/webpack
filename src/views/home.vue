@@ -2,7 +2,7 @@
  * @Author: qianqian.zhao
  * @Date: 2020-04-03 16:25:11
  * @LastEditors: qianqian.zhao
- * @LastEditTime: 2020-04-04 17:02:51
+ * @LastEditTime: 2020-05-22 10:52:15
  * @Description: 首页
  -->
 <template>
@@ -12,12 +12,13 @@
     <!-- <el-button type="primary"
       :menu-list="menuList" 
       @click="goMenuList">跳转到菜单列表页</el-button> -->
-      <menu-list :menu-list="menuList"></menu-list>
+      <!-- <menu-list :menu-list="menuList"></menu-list> -->
   </div>
 </template>
 
 <script>
 import MenuList from './menu-list.vue'
+import TriggerObj from '@/util/index.js'
 export default {
   name: 'home',
 
@@ -143,6 +144,16 @@ export default {
   },
 
   mounted () {
+    // 定义一个销售实例
+    const saleStore = new TriggerObj()
+
+    // 去进行订阅消息
+    saleStore.on(function () {
+      console.log('收到了通知', ...arguments)
+    })
+
+    // 有新消息了，触发通知
+    saleStore.trigger('出新房了，大家快来')
   },
 
   methods: {
