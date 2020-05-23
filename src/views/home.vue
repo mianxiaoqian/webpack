@@ -2,7 +2,7 @@
  * @Author: qianqian.zhao
  * @Date: 2020-04-03 16:25:11
  * @LastEditors: qianqian.zhao
- * @LastEditTime: 2020-05-22 10:52:15
+ * @LastEditTime: 2020-05-23 09:23:57
  * @Description: 首页
  -->
 <template>
@@ -19,6 +19,7 @@
 <script>
 import MenuList from './menu-list.vue'
 import TriggerObj from '@/util/index.js'
+import xinba from '@/components/vmControl.js'
 export default {
   name: 'home',
 
@@ -154,6 +155,8 @@ export default {
 
     // 有新消息了，触发通知
     saleStore.trigger('出新房了，大家快来')
+    console.log(xinba)
+    xinba.attr = '新值'
   },
 
   methods: {
