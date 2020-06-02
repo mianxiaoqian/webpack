@@ -1,6 +1,15 @@
+<!--
+ * @Author: qianqian.zhao
+ * @Date: 2020-04-07 21:01:01
+ * @LastEditors: qianqian.zhao
+ * @LastEditTime: 2020-06-02 16:50:58
+ * @Description: 
+--> 
 <template>
   <div class="menu-com">
-    菜单列表页组件
+    菜单列表页组件{{name}}
+    <br>
+    {{age}}
     <ul v-for="menu of menuList" :key="menu.name">
       <li @click="goMenuDetail(menu)">{{menu.name}}</li>
     </ul>
@@ -14,6 +23,10 @@ export default {
   components: {
   },
 
+  inject: [
+    'age'
+  ],
+
   filters: {
   },
 
@@ -23,12 +36,16 @@ export default {
   props: {
     menuList: {
       type: Array,
-      defult: []
+      default: []
+    },
+    name: {
+      type: String
     }
   },
 
   data () {
     return {
+      subName: '这里是辛巴哦'
     }
   },
 
