@@ -2,7 +2,7 @@
  * @Author: qianqian.zhao
  * @Date: 2020-04-03 16:25:11
  * @LastEditors: qianqian.zhao
- * @LastEditTime: 2020-05-23 09:23:57
+ * @LastEditTime: 2020-05-25 17:39:35
  * @Description: 首页
  -->
 <template>
@@ -149,14 +149,16 @@ export default {
     const saleStore = new TriggerObj()
 
     // 去进行订阅消息
-    saleStore.on(function () {
+    saleStore.on('mapChange', function () {
       console.log('收到了通知', ...arguments)
     })
 
+
+    console.log(saleStore.get())
     // 有新消息了，触发通知
-    saleStore.trigger('出新房了，大家快来')
-    console.log(xinba)
-    xinba.attr = '新值'
+    saleStore.emit('mapChange', '触发，进行事件广播，所有订阅者都将收到消息')
+    // console.log(xinba)
+    // xinba.attr = '新值'
   },
 
   methods: {
