@@ -1,6 +1,14 @@
+<!--
+ * @Author: qianqian.zhao
+ * @Date: 2020-04-07 19:06:20
+ * @LastEditors: qianqian.zhao
+ * @LastEditTime: 2020-06-04 14:28:49
+ * @Description: 
+--> 
 <template>
   <div class="menu-com">
     菜单列表页组件
+    <add-menu></add-menu>
     <ul v-for="menu of menuList" :key="menu.name">
       <li @click="goMenuDetail(menu)">{{menu.name}}</li>
     </ul>
@@ -8,13 +16,27 @@
 </template>
 
 <script>
+import AddMenu from './add-menu.vue'
 export default {
   name: 'menu-com',
 
   components: {
+    AddMenu
   },
 
   filters: {
+  },
+
+  beforeCreate () {
+    console.log('子组件的beforeCreate')
+  },
+
+  created () {
+    console.log('子组件的created')
+  },
+
+  beforeMount () {
+    console.log('子组件的beforeMount', this.$data)
   },
 
   mixins: [
@@ -42,6 +64,7 @@ export default {
   },
 
   mounted () {
+    console.log('子组件的mounted', this.$el)
   },
 
   methods: {

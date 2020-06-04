@@ -2,7 +2,7 @@
  * @Author: qianqian.zhao
  * @Date: 2020-04-03 16:25:11
  * @LastEditors: qianqian.zhao
- * @LastEditTime: 2020-05-23 09:23:57
+ * @LastEditTime: 2020-06-04 10:32:55
  * @Description: 首页
  -->
 <template>
@@ -12,7 +12,8 @@
     <!-- <el-button type="primary"
       :menu-list="menuList" 
       @click="goMenuList">跳转到菜单列表页</el-button> -->
-      <!-- <menu-list :menu-list="menuList"></menu-list> -->
+      <menu-list :menu-list="menuList"></menu-list>
+      <menu-list :menu-list="menuList"></menu-list>
   </div>
 </template>
 
@@ -25,6 +26,18 @@ export default {
 
   components: {
     MenuList
+  },
+
+  beforeCreate () {
+    console.log('home组件的beforeCreate')
+  },
+
+  created () {
+    console.log('home组件的传reated')
+  },
+
+  beforeMount () {
+    console.log('home组件的beforeMount')
   },
 
   filters: {
@@ -145,6 +158,7 @@ export default {
   },
 
   mounted () {
+    console.log('home组件的mounted')
     // 定义一个销售实例
     const saleStore = new TriggerObj()
 
@@ -154,7 +168,7 @@ export default {
     })
 
     // 有新消息了，触发通知
-    saleStore.trigger('出新房了，大家快来')
+    // saleStore.trigger('出新房了，大家快来')
     console.log(xinba)
     xinba.attr = '新值'
   },

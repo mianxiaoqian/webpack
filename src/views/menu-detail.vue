@@ -1,3 +1,10 @@
+<!--
+ * @Author: qianqian.zhao
+ * @Date: 2020-04-07 19:10:26
+ * @LastEditors: qianqian.zhao
+ * @LastEditTime: 2020-06-04 10:30:22
+ * @Description: 
+--> 
 <template>
   <div class="menu-detail">
     菜单详情页
@@ -10,6 +17,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'menu-detail',
 

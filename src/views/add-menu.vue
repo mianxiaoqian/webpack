@@ -14,6 +14,18 @@ export default {
   filters: {
   },
 
+  beforeCreate () {
+    console.log('孙组件的beforeCreate')
+  },
+
+  created () {
+    console.log('孙组件的created')
+  },
+
+  beforeMount () {
+    console.log('孙组件的beforeMount')
+  },
+
   mixins: [
   ],
 
@@ -32,6 +44,7 @@ export default {
   },
 
   mounted () {
+    console.log('孙组件的mounted', this.$el)
   },
 
   methods: {
